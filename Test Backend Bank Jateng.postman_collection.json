@@ -1,0 +1,291 @@
+{
+	"info": {
+		"_postman_id": "58e9973f-74f7-4dd3-9626-c7d0eb510829",
+		"name": "Test Backend Bank Jateng",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30889392"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Oktavian Bayu Widodo\",\n    \"phone_number\": \"081230084459\",\n    \"country\": \"Indonesia\",\n    \"password\": \"password123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3200/api/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3200",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phone_number\": \"081230084459\",\n    \"password\": \"password123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3200/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3200",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzI4MDEwNDk4LCJleHAiOjE3MjgwMTQwOTh9.LWAzpdpdFVT1_hDIQZD6iYu4-efvSdUps4bRthEFHlI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3200/api/auth/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3200",
+							"path": [
+								"api",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "card",
+			"item": [
+				{
+					"name": "add card",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzI4MDEzMjM3LCJleHAiOjE3MjgwMTY4Mzd9.y3cLdlWSJzN7HgNDcti4l88DIGDaYYNdvZAMOhBM80E",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"card_number\": \"5469305423411700\",\n  \"cardholder_name\": \"John Doe\",\n  \"expiry_date\": \"07/25\",\n  \"pin_code\": \"1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3200/api/card/addCard",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3200",
+							"path": [
+								"api",
+								"card",
+								"addCard"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get card list",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzI4MDEzMzExLCJleHAiOjE3MjgwMTY5MTF9.Z9Tkng-nM8dqJffzJSoXu3Z8-SBDlyeP8-3pFVWXqgo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3200/api/card/getCardList",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3200",
+							"path": [
+								"api",
+								"card",
+								"getCardList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get card detail",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzI4MDEzMzExLCJleHAiOjE3MjgwMTY5MTF9.Z9Tkng-nM8dqJffzJSoXu3Z8-SBDlyeP8-3pFVWXqgo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3200/api/card/getCardDetail/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3200",
+							"path": [
+								"api",
+								"card",
+								"getCardDetail",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "set pin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzI4MDEzMzExLCJleHAiOjE3MjgwMTY5MTF9.Z9Tkng-nM8dqJffzJSoXu3Z8-SBDlyeP8-3pFVWXqgo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"pin\": \"4321\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3200/api/card/setPin/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3200",
+							"path": [
+								"api",
+								"card",
+								"setPin",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "block card",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzI4MDEzMzExLCJleHAiOjE3MjgwMTY5MTF9.Z9Tkng-nM8dqJffzJSoXu3Z8-SBDlyeP8-3pFVWXqgo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3200/api/card/blockCard/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3200",
+							"path": [
+								"api",
+								"card",
+								"blockCard",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete card",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzI4MDEzMzExLCJleHAiOjE3MjgwMTY5MTF9.Z9Tkng-nM8dqJffzJSoXu3Z8-SBDlyeP8-3pFVWXqgo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3200/api/card/deleteCard/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3200",
+							"path": [
+								"api",
+								"card",
+								"deleteCard",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
